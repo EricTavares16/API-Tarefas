@@ -26,12 +26,12 @@ export async function ListarTodasTarefas () {
 }
 
 
-export async function ListarTarefasFinalizadas (finalizado) {
+export async function ListarTarefasFinalizadas () {
     const comando = 
         `SELECT * FROM TB_TAREFA
-        WHERE BT_FINALZADO = ?`
+        WHERE BT_FINALZADO = 1`
 
-    const [linhas] = await con.query(comando, [finalizado]);
+    const [linhas] = await con.query(comando);
     return linhas;
 
 }

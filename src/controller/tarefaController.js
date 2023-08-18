@@ -53,11 +53,10 @@ server.get('/tarefa', async (req, resp) => {
 })
 
 
-server.get('/tarefa/:finalizado', async (req, resp) => {
+server.get('/tarefa/finalizado', async (req, resp) => {
     try {
-
-        const {finalizado} = req.params
-        const resposta = await ListarTarefasFinalizadas(finalizado);
+        
+        const resposta = await ListarTarefasFinalizadas();
 
         resp.send(resposta)
 
